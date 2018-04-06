@@ -1,14 +1,31 @@
 .topping-option-container {
   display: flex;
 }
+.pizza-logo {
+  width: 300px;
+}
+.pizza-logo img {
+  width: 100%;
+}
 .pizza-image-container {
   position: relative;
+  width: 200px;
+}
+.pizza-image-container img {
+  width: 100%;
 }
 .pizza-toppings-container {
   position: absolute;
-  top: 50px;
-  left: 40px;
+  top: 30px;
+  left: 25px;
+  width: 71%;
 }
+#orderStarter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #pizzaForm, .error, .pizza-image-container {
   display: none;
 }

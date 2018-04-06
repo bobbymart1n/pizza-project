@@ -12,12 +12,23 @@
     <div class="container">
       <form id="pizzaOrder">
         <div id="orderStarter">
+          <div class="pizza-logo">
+            <img src="imgs/pizza-guy.png" alt="">
+          </div>
           <h1>Bobby's Bambino Pizza</h1>
           <div class="pizza-image-container">
             <img src="imgs/pizza.png" alt="">
             <div class="pizza-toppings-container"></div>
           </div>
           <button type="submit" class="btn btn-success">Click Here to Start your Order</button>
+        </div>
+        <div class="order-receipt" id="orderConfirmation">
+          <div class="row">
+            <ul></ul>
+            <div class="total container">
+              <h2 id="totalCost"></h2>
+            </div>
+          </div>
         </div>
         <div class="form-group" id="pizzaForm">
           <div class="mb-3" id="toppingsSection">
@@ -49,14 +60,6 @@
           <button type="button" class="btn btn-success mt-3" id="order">Order</button>
         </div>
       </form>
-      <div class="order-receipt" id="orderConfirmation">
-        <div class="row">
-          <ul></ul>
-          <div class="total container">
-            <h2 id="totalCost"></h2>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>

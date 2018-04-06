@@ -33,7 +33,6 @@ $(function() {
         pizza.toppings.push(toppingsPrice);
         $("#orderConfirmation ul").append('<li>' + toppingsText + '</li>');
         if(toppingsText === "Pepperoni") {
-          debugger;
           console.log(toppingsText);
           $(".pizza-toppings-container").prepend('<img src="imgs/pepperonis.png">');
         }

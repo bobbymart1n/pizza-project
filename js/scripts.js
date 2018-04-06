@@ -16,12 +16,12 @@ Pizza.prototype.cost = function () {
 $(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault();
-    var size = parseInt($("#sizes").val());
     var pizza = new Pizza(size);
-    var toppingsTotal = $("#toppings").val();
+    var size = parseInt($("#sizes").val());
     $("#pizzaForm").show();
     $("#orderStarter button").hide();
     $("button#addToppings").click(function() {
+      var toppingsTotal = parseFloat($("#toppings").val());
       pizza.toppings.push(toppingsTotal);
       console.log(pizza.toppings);
     });

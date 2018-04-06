@@ -21,20 +21,28 @@ $(function() {
     $("#pizzaForm").show();
     $("#orderStarter button").hide();
     $("button#addToppings").click(function() {
-      if ($("#toppings").val(0)) {
+      var toppingsPrice = parseFloat($("#toppings").val());
+      if (toppingsPrice === 0) {
         $(".error").show();
         $("#toppings").addClass('error-border');
-      } else {
-        var toppingsPrice = parseFloat($("#toppings").val());
+      } else if(toppingsPrice === 0.5) {
+        $(".error").hide();
+        $("#toppings").removeClass('error-border');
         pizza.toppings.push(toppingsPrice);
         $("#orderConfirmation ul").append('<li>' + $("#toppings option:selected").text() + '</li>');
+        $("#toppings").val(0);
       }
     });
     $("#order").click(function() {
       var size = parseInt($("#sizes").val());
-      pizza.size = size;
-      pizza.cost();
-      $("#totalCost").text(pizza.total);
+      if(size === 0) {
+        $(".error").show();
+      } else {
+        $(".error").hide();
+        pizza.size = size;
+        pizza.cost();
+        $("#totalCost").text(pizza.total);
+      }
     });
   });
 });

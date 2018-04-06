@@ -14,7 +14,9 @@ Pizza.prototype.cost = function () {
 
 // User Interface Logic
 $(function() {
-  ("#pizzaOrder").submit(function() {
-    
+  $("#pizzaOrder").submit(function(event) {
+    event.preventDefault();
+    var toppingsTotal = parseFloat($("#toppings").val());
+    console.log(toppingsTotal);
   });
 });

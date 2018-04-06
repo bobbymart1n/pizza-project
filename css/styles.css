@@ -1,6 +1,14 @@
 .topping-option-container {
   display: flex;
 }
+.pizza-image-container {
+  position: relative;
+}
+.pizza-toppings-container {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+}
 #pizzaForm, .error, .pizza-image-container {
   display: none;
 }

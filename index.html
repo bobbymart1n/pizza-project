@@ -16,18 +16,21 @@
           <button type="submit" class="btn btn-success">Click Here to Start your Order</button>
         </div>
         <div class="form-group" id="pizzaForm">
-          <div id="toppingsSection">
-            <select class="form-control" id="toppings">
-              <option>Select a topping</option>
-              <option value="0.5" name="Pepperoni">Pepperoni</option>
-              <option value="0.5">Sausage</option>
-              <option value="0.5">Bell Pepper</option>
-              <option value="0.5">Mushroom</option>
-              <option value="0.5">Onion</option>
-              <option value="0.5">Artichoke</option>
-              <option value="0.5">Tempeh</option>
-            </select>
-            <button type="button" class="btn btn-info" id="addToppings">Add</button>
+          <div class="mb-3" id="toppingsSection">
+            <div class="topping-option-container">
+              <select class="form-control" id="toppings">
+                <option value="0">Select a topping</option>
+                <option value="0.5">Pepperoni</option>
+                <option value="0.5">Sausage</option>
+                <option value="0.5">Bell Pepper</option>
+                <option value="0.5">Mushroom</option>
+                <option value="0.5">Onion</option>
+                <option value="0.5">Artichoke</option>
+                <option value="0.5">Tempeh</option>
+              </select>
+              <button type="button" class="btn btn-info" id="addToppings">Add</button>
+            </div>
+            <p class="error">Select a topping option</p>
           </div>
           <div id="sizeSection">
             <select class="form-control" id="sizes">
@@ -38,14 +41,12 @@
               <option value="20">Ultra Extra Party Power</option>
             </select>
           </div>
-          <button type="button" class="btn btn-success" id="order">Order</button>
+          <button type="button" class="btn btn-success mt-3" id="order">Order</button>
         </div>
       </form>
       <div class="order-receipt" id="orderConfirmation">
         <div class="row">
-          <ul>
-
-          </ul>
+          <ul></ul>
           <div class="total container">
             <h2 id="totalCost"></h2>
           </div>

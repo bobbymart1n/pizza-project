@@ -21,9 +21,14 @@ $(function() {
     $("#pizzaForm").show();
     $("#orderStarter button").hide();
     $("button#addToppings").click(function() {
-      var toppingsPrice = parseFloat($("#toppings").val());
-      pizza.toppings.push(toppingsPrice);
-      $("#orderConfirmation ul").append('<li>' + $("#toppings option:selected").text() + '</li>');
+      if ($("#toppings").val(0)) {
+        $(".error").show();
+        $("#toppings").addClass('error-border');
+      } else {
+        var toppingsPrice = parseFloat($("#toppings").val());
+        pizza.toppings.push(toppingsPrice);
+        $("#orderConfirmation ul").append('<li>' + $("#toppings option:selected").text() + '</li>');
+      }
     });
     $("#order").click(function() {
       var size = parseInt($("#sizes").val());

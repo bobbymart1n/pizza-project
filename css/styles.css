@@ -1,8 +1,15 @@
-#toppingsSection {
-  /* display: none; */
+.topping-option-container {
+  display: flex;
 }
-#pizzaForm {
+#pizzaForm, .error {
   display: none;
+}
+.error {
+  color: red;
+  font-size: 14px;
+}
+.error-border {
+  border-color: red;
 }
 
 .order-receipt .row{

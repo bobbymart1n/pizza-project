@@ -11,7 +11,11 @@
   <body>
     <div class="container">
       <form id="pizzaOrder">
-        <div class="form-group">
+        <div id="orderStarter">
+          <h1>Bobby's Bambino Pizza</h1>
+          <button type="submit" class="btn btn-success">Click Here to Start your Order</button>
+        </div>
+        <div class="form-group" id="pizzaForm">
           <div id="toppingsSection">
             <select class="form-control" id="toppings">
               <option>Select a topping</option>
@@ -34,8 +38,8 @@
               <option value="20">Ultra Extra Party Power</option>
             </select>
           </div>
+          <button type="button" class="btn btn-success">Order</button>
         </div>
-        <button type="submit" class="btn btn-success">Order</button>
       </form>
     </div>
   </body>

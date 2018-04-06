@@ -33,8 +33,25 @@ $(function() {
         pizza.toppings.push(toppingsPrice);
         $("#orderConfirmation ul").append('<li>' + toppingsText + '</li>');
         if(toppingsText === "Pepperoni") {
-          console.log(toppingsText);
           $(".pizza-toppings-container").prepend('<img src="imgs/pepperonis.png">');
+        } else if(toppingsText === "Sausage") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/sausages.png">');
+        } else if(toppingsText === "Bell Pepper") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/bell-pepper.png">');
+        } else if(toppingsText === "Mushroom") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/mushroom.png">');
+        } else if(toppingsText === "Onion") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/onions.png">');
+        } else if(toppingsText === "Artichoke") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/artichokes.png">');
+        } else if(toppingsText === "Tempeh") {
+          $(".pizza-toppings-container img").remove();
+          $(".pizza-toppings-container").prepend('<img src="imgs/tempehs.png">');
         }
         $("#toppings").val(0);
       }

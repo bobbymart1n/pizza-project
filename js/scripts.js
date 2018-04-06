@@ -66,10 +66,16 @@ $(function() {
         $(".error").hide();
         $("#pizzaForm").fadeOut();
         $(".pizza-image-container").fadeOut();
-        $("#totalCost").fadeIn();
+        $(".order-receipt").fadeOut();
+        setInterval(function () {
+          $(".order-receipt").fadeIn();
+          $(".order-receipt ul").addClass('display-block');
+          $(".order-receipt").addClass('text-center');
+          $("#totalCost").text(pizza.total);
+          $("#totalCost").fadeIn();
+        }, 700);
         pizza.size = size;
         pizza.cost();
-        $("#totalCost").text(pizza.total);
       }
     });
   });

@@ -10,7 +10,7 @@ Pizza.prototype.cost = function () {
     cost += topping
   });
   var total = cost + this.size;
-  this.total = total;
+  this.total = "Your total is: " + "$" + total.toFixed(2);
 };
 
 // User Interface Logic
@@ -18,7 +18,7 @@ $(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault();
     var pizza = new Pizza();
-    $("#pizzaForm").show();
+    $("#pizzaForm").fadeIn();
     $("#orderStarter button").hide();
     $(".pizza-image-container").fadeIn();
     $("button#addToppings").click(function() {
@@ -28,11 +28,13 @@ $(function() {
         $(".error").show();
         $("#toppings").addClass('error-border');
       } else if(toppingsPrice === 0.5) {
+        $(".order-receipt").fadeIn();
         $(".error").hide();
         $("#toppings").removeClass('error-border');
         pizza.toppings.push(toppingsPrice);
-        $("#orderConfirmation ul").append('<li>' + toppingsText + '</li>');
+        $("#orderConfirmation ul").append('<li>' + toppingsText + '&nbsp;</li>');
         if(toppingsText === "Pepperoni") {
+          $(".pizza-toppings-container img").remove();
           $(".pizza-toppings-container").prepend('<img src="imgs/pepperonis.png">');
         } else if(toppingsText === "Sausage") {
           $(".pizza-toppings-container img").remove();
@@ -62,6 +64,9 @@ $(function() {
         $(".error").show();
       } else {
         $(".error").hide();
+        $("#pizzaForm").fadeOut();
+        $(".pizza-image-container").fadeOut();
+        $("#totalCost").fadeIn();
         pizza.size = size;
         pizza.cost();
         $("#totalCost").text(pizza.total);

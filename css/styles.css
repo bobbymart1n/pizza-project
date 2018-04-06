@@ -1,11 +1,32 @@
-.topping-option-container {
-  display: flex;
+/* General Styles
+=============================*/
+body {
+  background: linear-gradient(#000 0%, #222 100%);
+  height: 100vh;
+  color: white;
 }
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+/* Button Styles
+=============================*/
+.btn-success, .btn-info {
+  border-width: 3px;
+  background-color: transparent;
+}
+/* Header Styles
+=============================*/
 .pizza-logo {
-  width: 300px;
+  width: 400px;
 }
 .pizza-logo img {
   width: 100%;
+}
+/* Topping Styles
+=============================*/
+.topping-option-container {
+  display: flex;
 }
 .pizza-image-container {
   position: relative;
@@ -18,17 +39,30 @@
   position: absolute;
   top: 30px;
   left: 25px;
-  width: 71%;
+  width: 66%;
 }
 #orderStarter {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-#pizzaForm, .error, .pizza-image-container {
+/* Hidden From Styles
+=============================*/
+#pizzaForm, .error, .pizza-image-container, .order-receipt {
   display: none;
 }
+.form-control {
+  background-color: transparent;
+  color: white;
+  border: 3px solid #555;
+  height: 60px !important;
+}
+.form-control:focus {
+  background-color: rgba(255,255,255,.4);
+  color: white;
+}
+/* Error Styles
+=============================*/
 .error {
   color: red;
   font-size: 14px;
@@ -36,7 +70,15 @@
 .error-border {
   border-color: red;
 }
-
+/* Receipt Styles
+=============================*/
 .order-receipt .row{
   flex-direction: column;
+}
+.order-receipt ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 400;
 }

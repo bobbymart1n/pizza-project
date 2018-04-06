@@ -12,22 +12,17 @@
     <div class="container">
       <form id="pizzaOrder">
         <div id="orderStarter">
-          <div class="pizza-logo">
-            <img src="imgs/pizza-guy.png" alt="">
+          <div class="pizza-logo mt-3">
+            <img src="imgs/logo.png" alt="">
           </div>
-          <h1>Bobby's Bambino Pizza</h1>
-          <div class="pizza-image-container">
-            <img src="imgs/pizza.png" alt="">
-            <div class="pizza-toppings-container"></div>
-          </div>
-          <button type="submit" class="btn btn-success">Click Here to Start your Order</button>
-        </div>
-        <div class="order-receipt" id="orderConfirmation">
           <div class="row">
-            <ul></ul>
-            <div class="total container">
-              <h2 id="totalCost"></h2>
+            <div class="col mb-3 mt-3">
+              <div class="pizza-image-container">
+                <img src="imgs/pizza.png" alt="">
+                <div class="pizza-toppings-container"></div>
+              </div>
             </div>
+            <button type="submit" class="btn btn-success mt-4 w-100">Click Here to Start your Order</button>
           </div>
         </div>
         <div class="form-group" id="pizzaForm">
@@ -58,6 +53,13 @@
             <p class="error">Select an option</p>
           </div>
           <button type="button" class="btn btn-success mt-3" id="order">Order</button>
+        </div>
+        <div class="order-receipt" id="orderConfirmation">
+          <h4>You've added these toppings:</h4>
+          <ul></ul>
+          <div class="total container">
+            <h2 id="totalCost"></h2>
+          </div>
         </div>
       </form>
     </div>

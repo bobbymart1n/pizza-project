@@ -1,5 +1,6 @@
+// Business Logic
 function Pizza (size) {
-  this.toppings = [0.5, 0.5];
+  this.toppings = [];
   this.size = size;
 }
 Pizza.prototype.cost = function () {
@@ -10,3 +11,10 @@ Pizza.prototype.cost = function () {
   var total = cost + this.size;
   return total
 };
+
+// User Interface Logic
+$(function() {
+  ("#pizzaOrder").submit(function() {
+    
+  });
+});

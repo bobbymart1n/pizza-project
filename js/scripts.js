@@ -1,7 +1,8 @@
 // Business Logic
-function Pizza (size) {
+function Pizza () {
   this.toppings = [];
-  this.size = size;
+  this.size;
+  this.total;
 }
 Pizza.prototype.cost = function () {
   var cost = 0;
@@ -9,21 +10,26 @@ Pizza.prototype.cost = function () {
     cost += topping
   });
   var total = cost + this.size;
-  return total
+  this.total = total;
 };
 
 // User Interface Logic
 $(function() {
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault();
-    var pizza = new Pizza(size);
-    var size = parseInt($("#sizes").val());
+    var pizza = new Pizza();
     $("#pizzaForm").show();
     $("#orderStarter button").hide();
     $("button#addToppings").click(function() {
-      var toppingsTotal = parseFloat($("#toppings").val());
-      pizza.toppings.push(toppingsTotal);
-      console.log(pizza.toppings);
+      var toppingsPrice = parseFloat($("#toppings").val());
+      pizza.toppings.push(toppingsPrice);
+      $("#orderConfirmation ul").append('<li>' + $("#toppings option:selected").text() + '</li>');
+    });
+    $("#order").click(function() {
+      var size = parseInt($("#sizes").val());
+      pizza.size = size;
+      pizza.cost();
+      $("#totalCost").text(pizza.total);
     });
   });
 });

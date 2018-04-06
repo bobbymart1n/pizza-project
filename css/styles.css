@@ -4,3 +4,7 @@
 #pizzaForm {
   display: none;
 }
+
+.order-receipt .row{
+  flex-direction: column;
+}

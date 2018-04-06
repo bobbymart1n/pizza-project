@@ -19,7 +19,7 @@
           <div id="toppingsSection">
             <select class="form-control" id="toppings">
               <option>Select a topping</option>
-              <option value="0.5">Pepperoni</option>
+              <option value="0.5" name="Pepperoni">Pepperoni</option>
               <option value="0.5">Sausage</option>
               <option value="0.5">Bell Pepper</option>
               <option value="0.5">Mushroom</option>
@@ -38,9 +38,19 @@
               <option value="20">Ultra Extra Party Power</option>
             </select>
           </div>
-          <button type="button" class="btn btn-success">Order</button>
+          <button type="button" class="btn btn-success" id="order">Order</button>
         </div>
       </form>
+      <div class="order-receipt" id="orderConfirmation">
+        <div class="row">
+          <ul>
+
+          </ul>
+          <div class="total container">
+            <h2 id="totalCost"></h2>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -14,10 +14,16 @@ Pizza.prototype.cost = function () {
 
 // User Interface Logic
 $(function() {
+  var size = parseInt($("#sizes").val());
+  var toppingsTotal = parseFloat($("#toppings").val());
   $("#pizzaOrder").submit(function(event) {
     event.preventDefault();
-    var pizza = new Pizza();
-    var size = parseInt($("#sizes").val());
-    var toppingsTotal = parseFloat($("#toppings").val());
+    var pizza = new Pizza(size);
+    $("#toppingsSection").show();
+    $("#sizeSection").hide();
+    $("button#addToppings").click(function() {
+      pizza.toppings.push(toppingsTotal);
+      console.log(pizza.toppings);
+    });
   });
 });

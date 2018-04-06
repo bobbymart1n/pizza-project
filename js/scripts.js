@@ -20,8 +20,10 @@ $(function() {
     var pizza = new Pizza();
     $("#pizzaForm").show();
     $("#orderStarter button").hide();
+    $(".pizza-image-container").fadeIn();
     $("button#addToppings").click(function() {
       var toppingsPrice = parseFloat($("#toppings").val());
+      var toppingsText = $("#toppings option:selected").text();
       if (toppingsPrice === 0) {
         $(".error").show();
         $("#toppings").addClass('error-border');
@@ -29,7 +31,10 @@ $(function() {
         $(".error").hide();
         $("#toppings").removeClass('error-border');
         pizza.toppings.push(toppingsPrice);
-        $("#orderConfirmation ul").append('<li>' + $("#toppings option:selected").text() + '</li>');
+        $("#orderConfirmation ul").append('<li>' + toppingsText + '</li>');
+        if(toppingsText === "Pepperoni") {
+          $(".pizza-toppings-container").append('<img src="../imgs/pepperonis.png"');
+        }
         $("#toppings").val(0);
       }
     });

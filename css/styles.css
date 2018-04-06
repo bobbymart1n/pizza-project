@@ -1,7 +1,7 @@
 .topping-option-container {
   display: flex;
 }
-#pizzaForm, .error {
+#pizzaForm, .error, .pizza-image-container {
   display: none;
 }
 .error {
